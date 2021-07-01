@@ -20,9 +20,9 @@ jobs:
       with:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
     - run: npm ci && npm run sort-compile
       working-directory: ${{ matrix.build-folders }}
     - name: Commit files
