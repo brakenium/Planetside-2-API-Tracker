@@ -40,6 +40,7 @@ jobs:
     - name: Commit files
       shell: bash --noprofile --norc {0}
       run: |
+        git pull
         git config --local user.email "api-tracker[bot]@example.com"
         git config --local user.name "github-actions[bot]"
         git commit -m "Build list files" -a
