@@ -9,6 +9,7 @@ on:
     - Construction/size-list.csv
     - Weapons/list.js
     - Weapons/sanction-list.csv
+    - .github/workflows/build.yaml
   workflow_dispatch:
 
 jobs:
