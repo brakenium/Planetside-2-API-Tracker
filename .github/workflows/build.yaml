@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 10 # otherwise, you will failed to push refs to dest repo
+        fetch-depth: 10 # otherwise, you will fail to push refs to dest repo
     # Install Node JS in VM
     - name: Use Node.js 14.x
       uses: actions/setup-node@v2
@@ -43,6 +43,7 @@ jobs:
         git config --local user.email "api-tracker[bot]@example.com"
         git config --local user.name "github-actions[bot]"
         git commit -m "Build list files" -a
+        exit 0
     # Push to the branch the push event originated from
     - name: Push changes
       uses: ad-m/github-push-action@master
