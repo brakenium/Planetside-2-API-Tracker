@@ -43,7 +43,7 @@ jobs:
         git config --local user.email "api-tracker[bot]@example.com"
         git config --local user.name "github-actions[bot]"
         git commit -m "Build list files" -a
-        if [ $? -eq 1 ]; then nocommit=true; fi
+        if [ $? -eq 1 ]; then echo "nocommit=true" >> $GITHUB_ENV; fi
     # Push to the branch the push event originated from
     - name: Push changes
       if: ${{ env.nocommit != true }}
