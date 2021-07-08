@@ -38,11 +38,12 @@ jobs:
       working-directory: ${{ matrix.build-folders }}
     # Commit files with the following details
     - name: Commit files
+      shell: bash --noprofile --norc {0}
       run: |
         git config --local user.email "api-tracker[bot]@example.com"
         git config --local user.name "github-actions[bot]"
         git commit -m "Build list files" -a
-        if [ $? -eq 1 ]; then $nocommit=true && exit 0; fi
+        if [ $? -eq 1 ]; then $nocommit=true; fi
     # Push to the branch the push event originated from
     - name: Push changes
       if: ${{ env.nocommit != true }}
