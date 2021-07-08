@@ -32,6 +32,8 @@ jobs:
       working-directory: ${{ matrix.build-folders }}
     - name: Commit files
       run: |
+        git config --local user.email "api-tracker[bot]@example.com"
+        git config --local user.name "github-actions[bot]"
         git commit -m "Build list files" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
